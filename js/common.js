@@ -1,0 +1,3 @@
+$('a').myPlugin({
+  'color' : 'black'
+});
