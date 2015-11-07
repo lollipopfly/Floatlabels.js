@@ -1,3 +1,1 @@
-$('a').myPlugin({
-  'color' : 'black'
-});
+$('.float-label').floatLabels();

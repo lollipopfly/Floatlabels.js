@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>floatLabels</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="field">
-		<input type="text" pattern=".+" required="" placeholder="First Name"><label>First Name</label>
+	<div class="float-label">
+		<label for="name">Name</label>
+		<input type="text" id="name" placeholder="First Name">
+	</div>
+
+	<div class="float-label">
+		<label for="message">memssage</label>
+		<textarea name="memssage" placeholder="memssage"></textarea>
 	</div>
 	<script src='bower_components/jquery/dist/jquery.min.js'></script>
 	<script src='floatlabels.js'></script>

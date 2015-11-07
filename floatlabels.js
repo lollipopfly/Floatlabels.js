@@ -6,16 +6,43 @@
  */
 
 (function( $ ) {
-	$.fn.myPlugin = function(options) {
+	$.fn.floatLabels = function(options) {
 
+		// Default settings
 		var settings = $.extend( {
-			'color': 'green',
+			'color': '#33a',
 		}, options);
 
+		// Code
 		return this.each(function() {
-			$(this).css('color', settings.color);
-			// Тут пишем код плагина tooltip
+			var field = $(this),
+				label = field.children('label'),
+				input = field.children('input, textarea');
 
+			input.on('keyup', function() {
+				label.css({
+					opacity: 1,
+					top: '-20px',
+					color: settings.color,
+				});
+
+				if(input.val() === '') {
+					label.css({
+						opacity: '0',
+						top: '3px',
+					});
+				}
+			});
+
+			input.on('focus', function() {
+				label.css({
+					color: settings.color,
+				});
+			});
+
+			input.on('blur', function() {
+				label.css('color', 'gray');
+			});
 		});
 	};
 })(jQuery);
